@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオサイト</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Splide CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+</head>
+<!--
+以下のセクションをすべて含める
+・ヘッダー（あだ名・キャッチコピーなど）
+・自己紹介
+・スキルリスト（PH1で学んだ技術など）
+・作品スライダー（Splideを使う。画像は仮の画像でもよい）
+・フッター
+・Splideでスライダーを実装している（スライドが2枚以上ある）
+・ホバーアニメーション（hover:scale-xxx / hover:-translate-y-x など）を2箇所以上使っている
+・transition-all duration-xxx でアニメーションを滑らかにしている
+・これまでの週の提出物とは別の独立したHTML/フォルダで作成している
+・Tailwind CSSで見た目を整える
+-->
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- 1. ヘッダー (あだ名・キャッチコピー) -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div>
+        <h1 class="text-xl font-bold text-gray-900">みーこ</h1>
+        <p class="text-xs text-gray-500">フロントエンド勉強中！</p>
+      </div>
+      <nav>
+        <ul class="flex space-x-4 text-sm font-medium">
+          <li><a href="#about" class="hover:text-blue-600 transition-colors duration-300">About</a></li>
+          <li><a href="#skills" class="hover:text-blue-600 transition-colors duration-300">Skills</a></li>
+          <li><a href="#works" class="hover:text-blue-600 transition-colors duration-300">Works</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-20">
+
+    <!-- 2. 自己紹介 -->
+    <section id="about" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-8">
+      <img src="https://picsum.photos/id/1025/150/150" alt="アイコン" class="w-32 h-32 rounded-full object-cover shadow-md">
+      <div>
+        <h2 class="text-2xl font-bold mb-3 text-gray-900">About Me</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Web制作を勉強しています。見た目がきれいで使いやすいWebサイトを作るのが目標です！
+        </p>
+        <span class="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold">学習中：HTML / CSS / JavaScript</span>
+      </div>
+    </section>
+
+    <!-- 3. スキルリスト (ホバーアニメーション1箇所目) -->
+    <section id="skills">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-900">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        
+        <!-- カード1 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+          <div class="text-3xl mb-2">🎨</div>
+          <h3 class="font-bold text-lg mb-1">HTML / CSS</h3>
+          <p class="text-xs text-gray-500">Tailwind CSSを使ったレスポンシブデザインができます。</p>
+        </div>
+
+        <!-- カード2 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+          <div class="text-3xl mb-2">⚡</div>
+          <h3 class="font-bold text-lg mb-1">JavaScript</h3>
+          <p class="text-xs text-gray-500">フォーム検証やDOM操作の基礎を実装できます。</p>
+        </div>
+
+        <!-- カード3 -->
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+          <div class="text-3xl mb-2">🐙</div>
+          <h3 class="font-bold text-lg mb-1">Git / GitHub</h3>
+          <p class="text-xs text-gray-500">ブランチを切った開発やPRの作成を行えます。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. 作品スライダー (Splide & ホバーアニメーション2箇所目) -->
+    <section id="works">
+      <h2 class="text-2xl font-bold mb-6 text-center text-gray-900">Works</h2>
+      
+      <!-- Splide本体 -->
+      <div class="splide" aria-label="作品スライダー">
+        <div class="splide__track">
+          <ul class="splide__list">
+            
+            <!-- スライド1 -->
+            <li class="splide__slide p-2">
+              <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:scale-105">
+                <img src="https://picsum.photos/id/1/600/400" alt="作品1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                  <h3 class="font-bold text-md">プロフィールサイト</h3>
+                  <p class="text-xs text-gray-500 mt-1">自己紹介用のシンプルなWebページ。</p>
+                </div>
+              </div>
+            </li>
+
+            <!-- スライド2 -->
+            <li class="splide__slide p-2">
+              <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:scale-105">
+                <img src="https://picsum.photos/id/20/600/400" alt="作品2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                  <h3 class="font-bold text-md">バリデーションフォーム</h3>
+                  <p class="text-xs text-gray-500 mt-1">JavaScriptでエラー判定を行うフォーム。</p>
+                </div>
+              </div>
+            </li>
+
+            <!-- スライド3 -->
+            <li class="splide__slide p-2">
+              <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:scale-105">
+                <img src="https://picsum.photos/id/3/600/400" alt="作品3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                  <h3 class="font-bold text-md">Webアプリケーション</h3>
+                  <p class="text-xs text-gray-500 mt-1">現在作成中のオリジナルアプリ。</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. フッター -->
+  <footer class="bg-white border-t border-gray-200 py-6 text-center text-xs text-gray-500">
+    <p>&copy; 2026 miiko. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Splide JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  
+  <!-- Splide初期化JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('.splide', {
+        type: 'loop',
+        perPage: 2,
+        gap: '1rem',
+        breakpoints: {
+          640: {
+            perPage: 1,
+          },
+        },
+      }).mount();
+    });
+  </script>
+
+</body>
+</html>
+</html>
